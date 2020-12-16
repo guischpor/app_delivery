@@ -1,5 +1,3 @@
-import 'package:app_delivery/widgets/build_button.dart';
-import 'package:app_delivery/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -8,6 +6,9 @@ import 'package:app_delivery/colors/colors.dart';
 
 //Widgets
 import 'package:app_delivery/widgets/back_button.dart';
+import 'package:app_delivery/widgets/build_button.dart';
+import 'package:app_delivery/widgets/input_field.dart';
+import 'package:app_delivery/widgets/title_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -60,25 +61,24 @@ class _LoginPageState extends State<LoginPage> {
                 child: Center(
                   child: Column(
                     children: [
-                      Text(
-                        "Welcome Back",
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 30),
+                      TitlePage(
+                        title: "Welcome Back",
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
                       ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Text(
-                        "Login to your account",
-                        style: TextStyle(
-                            color: cinza,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15),
-                      ),
+                      // SizedBox(
+                      //   height: 15,
+                      // ),
+                      // Text(
+                      //   "Login to your account",
+                      //   style: TextStyle(
+                      //       color: cinza,
+                      //       fontWeight: FontWeight.w500,
+                      //       fontSize: 15),
+                      // ),
                       Container(
-                        margin: EdgeInsets.only(top: 40),
+                        margin: EdgeInsets.only(top: 30),
                         child: InputField(
                           textInputType: TextInputType.emailAddress,
                           hint: "Email",
@@ -97,10 +97,51 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 40),
+                        margin: EdgeInsets.only(top: 20),
                         child: BuildButton(
                           onPressed: () => {},
                           title: "Log In",
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                        child: InkWell(
+                          onTap: _routeForgotPassword,
+                          child: Text(
+                            'Forgot your password?',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              "Don't have account?",
+                              style: TextStyle(
+                                color: cinza,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 10),
+                              child: InkWell(
+                                onTap: () => {},
+                                child: Text(
+                                  'Sign up',
+                                  style: TextStyle(
+                                    color: Theme.of(context).accentColor,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       ),
                     ],
@@ -112,5 +153,9 @@ class _LoginPageState extends State<LoginPage> {
         ],
       ),
     );
+  }
+
+  void _routeForgotPassword() async {
+    Navigator.pushNamed(context, 'forgot_password');
   }
 }

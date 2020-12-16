@@ -80,7 +80,6 @@ class _WelcomePageState extends State<WelcomePage> {
   }
 
   void _routeLoginPage() async {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => LoginPage()));
+    Navigator.pushNamed(context, 'login');
   }
 }
