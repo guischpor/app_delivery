@@ -28,7 +28,11 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     return Scaffold(
-      body: Column(
+      // appBar: AppBar(
+      //   backgroundColor: Colors.transparent,
+      //   shadowColor: Colors.transparent,
+      // ),
+      body: ListView(
         children: [
           Stack(
             children: [
@@ -39,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
                 image: AssetImage('./assets/images/imagem_login_2.jpg'),
               ),
               Container(
-                margin: EdgeInsets.only(top: 50),
+                margin: EdgeInsets.only(top: 30),
                 child: backButton(
                   context,
                   Colors.white,
@@ -99,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                       Container(
                         margin: EdgeInsets.only(top: 20),
                         child: BuildButton(
-                          onPressed: () => {},
+                          onPressed: _routeHomePage,
                           title: "Log In",
                         ),
                       ),
@@ -131,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                             Container(
                               margin: EdgeInsets.symmetric(horizontal: 10),
                               child: InkWell(
-                                onTap: () => {},
+                                onTap: _routeSignUpPage,
                                 child: Text(
                                   'Sign up',
                                   style: TextStyle(
@@ -157,5 +161,13 @@ class _LoginPageState extends State<LoginPage> {
 
   void _routeForgotPassword() async {
     Navigator.pushNamed(context, 'forgot_password');
+  }
+
+  void _routeSignUpPage() async {
+    Navigator.pushNamed(context, 'sign-up');
+  }
+
+  void _routeHomePage() async {
+    Navigator.pushNamed(context, 'tabs');
   }
 }

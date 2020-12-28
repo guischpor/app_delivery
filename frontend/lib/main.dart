@@ -1,4 +1,3 @@
-import 'package:app_delivery/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 //Routes
