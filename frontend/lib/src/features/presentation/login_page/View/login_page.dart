@@ -5,10 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:app_delivery/src/colors/colors.dart';
 
 //Widgets
-import 'package:app_delivery/src/widgets/back_button.dart';
-import 'package:app_delivery/src/widgets/build_button.dart';
-import 'package:app_delivery/src/widgets/input_field.dart';
-import 'package:app_delivery/src/widgets/title_page.dart';
+import 'package:app_delivery/src/features/presentation/widgets/back_button.dart';
+import 'package:app_delivery/src/features/presentation/widgets/build_button.dart';
+import 'package:app_delivery/src/features/presentation/widgets/input_field.dart';
+import 'package:app_delivery/src/features/presentation/widgets/title_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
