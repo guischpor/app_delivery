@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 //colors
-import 'package:app_delivery/colors/colors.dart';
+import 'package:app_delivery/src/colors/colors.dart';
 
 //Widgets
-import 'package:app_delivery/widgets/back_button.dart';
-import 'package:app_delivery/widgets/build_button.dart';
-import 'package:app_delivery/widgets/input_field.dart';
-import 'package:app_delivery/widgets/title_page.dart';
+import 'package:app_delivery/src/widgets/back_button.dart';
+import 'package:app_delivery/src/widgets/build_button.dart';
+import 'package:app_delivery/src/widgets/input_field.dart';
+import 'package:app_delivery/src/widgets/title_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override

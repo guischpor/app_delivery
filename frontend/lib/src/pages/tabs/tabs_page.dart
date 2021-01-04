@@ -6,10 +6,10 @@ import 'package:flutter/material.dart';
 //widgets
 
 //Tabs
-import 'package:app_delivery/pages/tabs/explore_tab.dart';
-import 'package:app_delivery/pages/tabs/favourites_tab.dart';
-import 'package:app_delivery/pages/tabs/my_order_tab.dart';
-import 'package:app_delivery/pages/tabs/profile_tab.dart';
+import 'package:app_delivery/src/pages/tabs/explore_tab.dart';
+import 'package:app_delivery/src/pages/tabs/favourites_tab.dart';
+import 'package:app_delivery/src/pages/tabs/my_order_tab.dart';
+import 'package:app_delivery/src/pages/tabs/profile_tab.dart';
 
 class TabsPage extends StatefulWidget {
   @override
@@ -67,30 +67,4 @@ class _TabsPagetate extends State<TabsPage> {
       ],
     );
   }
-}
-
-Widget _bottomNavigationBar(BuildContext context) {
-  return BottomNavigationBar(
-    iconSize: 30,
-    selectedItemColor: Theme.of(context).accentColor,
-    unselectedItemColor: Colors.grey,
-    items: <BottomNavigationBarItem>[
-      BottomNavigationBarItem(
-        icon: Icon(Icons.explore),
-        label: 'Explore',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.assignment),
-        label: 'My Order',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.book),
-        label: 'Favourite',
-      ),
-      BottomNavigationBarItem(
-        icon: Icon(Icons.person_pin),
-        label: 'Profile',
-      ),
-    ],
-  );
 }

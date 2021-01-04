@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 //Styles
 
 //Widgets
-import 'package:app_delivery/widgets/back_button.dart';
-import 'package:app_delivery/widgets/title_page.dart';
-import 'package:app_delivery/widgets/input_field.dart';
-import 'package:app_delivery/widgets/build_button.dart';
+import 'package:app_delivery/src/widgets/back_button.dart';
+import 'package:app_delivery/src/widgets/title_page.dart';
+import 'package:app_delivery/src/widgets/input_field.dart';
+import 'package:app_delivery/src/widgets/build_button.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   ForgotPasswordPage({Key key}) : super(key: key);

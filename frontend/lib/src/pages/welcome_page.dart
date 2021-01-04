@@ -2,11 +2,11 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 //Pages
-import 'package:app_delivery/pages/login_page.dart';
+import 'package:app_delivery/src/pages/login_page.dart';
 
 //Widgets
-import 'package:app_delivery/widgets/build_button.dart';
-import 'package:app_delivery/widgets/build_button_logo.dart';
+import 'package:app_delivery/src/widgets/build_button.dart';
+import 'package:app_delivery/src/widgets/build_button_logo.dart';
 
 class WelcomePage extends StatefulWidget {
   @override
