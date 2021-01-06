@@ -22,7 +22,9 @@ class _WelcomePageState extends State<WelcomePage> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage('./assets/images/background_03.jpg'),
+                image: AssetImage('./assets/images/background_06.jpg'),
+                // image: NetworkImage(
+                //     'https://images.unsplash.com/photo-1559329007-40df8a9345d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2734&q=80'),
               ),
             ),
             child: BackdropFilter(

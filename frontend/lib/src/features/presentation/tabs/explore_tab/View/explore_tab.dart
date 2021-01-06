@@ -108,6 +108,7 @@ Widget _topBar(BuildContext context) {
 //sliders menu
 Widget _sliderCards() {
   return Container(
+    height: 350,
     child: Swiper(
       itemCount: 4,
       layout: SwiperLayout.DEFAULT,
@@ -123,4 +124,92 @@ Widget _sliderCards() {
 }
 
 //widget info slide
-Widget _labelSwipe(BuildContext context) {}
+Widget _labelSwipe(BuildContext context) {
+  return InkWell(
+    onTap: () => {},
+    child: Container(
+      margin: EdgeInsets.all(7),
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image(
+              width: 210,
+              height: 250,
+              fit: BoxFit.cover,
+              image: AssetImage('assets/images/photo_card_explore.jpg'),
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: EdgeInsets.only(top: 10),
+                child: TitlePage(
+                  title: "Andys & Cindy's Diner",
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17,
+                ),
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: TitlePage(
+                  title: "87 Botsford Circle Apt",
+                  color: cinza,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 13,
+                ),
+              ),
+              Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(right: 3),
+                    child: Icon(
+                      Icons.star,
+                      size: 16,
+                      color: amarelo,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(right: 3),
+                    child: TitlePage(
+                      title: "4.8",
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(right: 5),
+                    child: TitlePage(
+                      title: "(233 ratings)",
+                      color: cinza,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
+                    ),
+                  ),
+                  Container(
+                    width: 72,
+                    height: 18,
+                    child: RaisedButton(
+                      elevation: 0.5,
+                      shape: StadiumBorder(),
+                      color: Theme.of(context).accentColor,
+                      onPressed: () => {},
+                      child: TitlePage(
+                        title: "Delivery",
+                        color: Colors.white,
+                        fontSize: 11,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          )
+        ],
+      ),
+    ),
+  );
+}
