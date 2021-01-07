@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 //Pages
 
-//Widgets
-import 'package:app_delivery/src/features/presentation/widgets/build_button.dart';
-import 'package:app_delivery/src/features/presentation/widgets/build_button_logo.dart';
+//Commons_widgets
+import 'package:app_delivery/src/features/presentation/commons_widgets/build_button.dart';
+import 'package:app_delivery/src/features/presentation/commons_widgets/build_button_logo.dart';
 
 class WelcomePage extends StatefulWidget {
   @override

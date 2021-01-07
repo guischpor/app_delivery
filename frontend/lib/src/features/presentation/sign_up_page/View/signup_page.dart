@@ -1,14 +1,13 @@
 //Widgtes
-
 import 'package:flutter/material.dart';
 
 //Styles
 
-//components
-import 'package:app_delivery/src/features/presentation/widgets/back_button.dart';
-import 'package:app_delivery/src/features/presentation/widgets/build_button.dart';
-import 'package:app_delivery/src/features/presentation/widgets/input_field.dart';
-import 'package:app_delivery/src/features/presentation/widgets/title_page.dart';
+//Commons_widgets
+import 'package:app_delivery/src/features/presentation/commons_widgets/back_button.dart';
+import 'package:app_delivery/src/features/presentation/commons_widgets/build_button.dart';
+import 'package:app_delivery/src/features/presentation/commons_widgets/input_field.dart';
+import 'package:app_delivery/src/features/presentation/commons_widgets/title_page.dart';
 
 class SignUpPage extends StatefulWidget {
   @override

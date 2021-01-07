@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 //Styles
 
-//Widgets
-import 'package:app_delivery/src/features/presentation/widgets/back_button.dart';
-import 'package:app_delivery/src/features/presentation/widgets/build_button.dart';
-import 'package:app_delivery/src/features/presentation/widgets/input_field.dart';
-import 'package:app_delivery/src/features/presentation/widgets/title_page.dart';
+//Commons_widgets
+import 'package:app_delivery/src/features/presentation/commons_widgets/back_button.dart';
+import 'package:app_delivery/src/features/presentation/commons_widgets/build_button.dart';
+import 'package:app_delivery/src/features/presentation/commons_widgets/input_field.dart';
+import 'package:app_delivery/src/features/presentation/commons_widgets/title_page.dart';
+import 'package:app_delivery/src/features/presentation/commons_widgets/show_dialog.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   ForgotPasswordPage({Key key}) : super(key: key);
@@ -68,7 +69,16 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               Container(
                 margin: EdgeInsets.only(top: 40),
                 child: BuildButton(
-                  onPressed: () => {_showAlerta(context)},
+                  onPressed: () => {
+                    showAlerta(
+                      context,
+                      AssetImage('assets/icons/icon-password-round.png'), //icon
+                      "Your password has been reset.", //title
+                      "You'll shortly receive an email with a code to setup a new password.", //subTitle
+                      "Done", //titleButton
+                      _routeLoginPage, //function
+                    ),
+                  },
                   title: "Send",
                 ),
               ),
@@ -76,64 +86,6 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
         ),
       ),
-    );
-  }
-
-  void _showAlerta(BuildContext context) {
-    showDialog(
-      context: context,
-      barrierDismissible: true,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(
-              Radius.circular(20),
-            ),
-          ),
-          content: Container(
-            height: 330,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Image(
-                  image: AssetImage('assets/icons/icon-password-round.png'),
-                  width: 130,
-                  height: 130,
-                ),
-                Container(
-                  padding: EdgeInsets.all(15),
-                  child: TitlePage(
-                    title: "Your password has been reset.",
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(10),
-                  child: TitlePage(
-                    title:
-                        "You'll shortly receive an email with a code to setup a new password.",
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.w400,
-                    fontSize: 15,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 15),
-                  child: BuildButton(
-                    onPressed: _routeLoginPage,
-                    title: "Done",
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
     );
   }
 

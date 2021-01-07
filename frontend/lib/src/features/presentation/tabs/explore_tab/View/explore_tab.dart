@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
-//widgets
-import 'package:app_delivery/src/features/presentation/widgets/title_page.dart';
+//Commons_widgets
+import 'package:app_delivery/src/features/presentation/commons_widgets/title_page.dart';
 
 //Pages
 
@@ -41,7 +41,18 @@ class _ExploreTabState extends State<ExploreTab> {
                           fontSize: 30,
                         ),
                       ),
-                      _sliderCards()
+                      _sliderCards(),
+                      _headers(
+                        context,
+                        'Popular this week',
+                        'Show all',
+                      ),
+                      _popular(context,
+                          'assets/images/photo_card_explore_popular_card.jpg'),
+                      _popular(context,
+                          'assets/images/photo_card_explore_popular_card.jpg'),
+                      _popular(context,
+                          'assets/images/photo_card_explore_popular_card.jpg'),
                     ],
                   ),
                 ),
@@ -206,6 +217,148 @@ Widget _labelSwipe(BuildContext context) {
                   ),
                 ],
               ),
+            ],
+          )
+        ],
+      ),
+    ),
+  );
+}
+
+//Widgets Headers
+Widget _headers(
+  BuildContext context,
+  String textHeader,
+  String textAction,
+) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Container(
+        alignment: Alignment.centerLeft,
+        child: TitlePage(
+          title: textHeader,
+          color: Colors.black,
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      Spacer(),
+      InkWell(
+        onTap: () => {},
+        child: Row(
+          children: [
+            TitlePage(
+              title: textAction,
+              color: Colors.black,
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+            ),
+            Icon(
+              Icons.play_arrow,
+              size: 15,
+            )
+          ],
+        ),
+      ),
+    ],
+  );
+}
+
+//Widget Popular Weeks
+Widget _popular(
+  BuildContext context,
+  String image,
+) {
+  return GestureDetector(
+    onTap: () => {},
+    child: Container(
+      padding: EdgeInsets.symmetric(vertical: 10),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image(
+                  width: 80,
+                  height: 80,
+                  fit: BoxFit.cover,
+                  image: AssetImage(image),
+                ),
+              ),
+              SizedBox(
+                width: 15,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 7),
+                    child: TitlePage(
+                      title: "Andys & Cindy's Diner",
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                    ),
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    margin: EdgeInsets.symmetric(vertical: 5),
+                    child: TitlePage(
+                      title: "87 Botsford Circle Apt",
+                      color: cinza,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 13,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 3),
+                        child: Icon(
+                          Icons.star,
+                          size: 16,
+                          color: amarelo,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 3),
+                        child: TitlePage(
+                          title: "4.8",
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13,
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 20),
+                        child: TitlePage(
+                          title: "(233 ratings)",
+                          color: cinza,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 13,
+                        ),
+                      ),
+                      Container(
+                        width: 72,
+                        height: 18,
+                        child: RaisedButton(
+                          elevation: 0.5,
+                          shape: StadiumBorder(),
+                          color: Theme.of(context).accentColor,
+                          onPressed: () => {},
+                          child: TitlePage(
+                            title: "Delivery",
+                            color: Colors.white,
+                            fontSize: 11,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              )
             ],
           )
         ],
