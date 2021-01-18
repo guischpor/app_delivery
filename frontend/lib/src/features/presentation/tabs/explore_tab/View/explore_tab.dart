@@ -1,9 +1,11 @@
 //widgets flutter
+
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 //Commons_widgets
 import 'package:app_delivery/src/features/presentation/commons_widgets/title_page.dart';
+import 'package:app_delivery/src/features/presentation/commons_widgets/headers.dart';
 
 //Pages
 
@@ -42,7 +44,7 @@ class _ExploreTabState extends State<ExploreTab> {
                         ),
                       ),
                       _sliderCards(),
-                      _headers(
+                      headers(
                         context,
                         'Popular this week',
                         'Show all',
@@ -53,6 +55,15 @@ class _ExploreTabState extends State<ExploreTab> {
                           'assets/images/photo_card_explore_popular_card.jpg'),
                       _popular(context,
                           'assets/images/photo_card_explore_popular_card.jpg'),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      headers(
+                        context,
+                        'Collections',
+                        'Show all',
+                      ),
+                      _sliderCollections(),
                     ],
                   ),
                 ),
@@ -225,46 +236,6 @@ Widget _labelSwipe(BuildContext context) {
   );
 }
 
-//Widgets Headers
-Widget _headers(
-  BuildContext context,
-  String textHeader,
-  String textAction,
-) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-    children: [
-      Container(
-        alignment: Alignment.centerLeft,
-        child: TitlePage(
-          title: textHeader,
-          color: Colors.black,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      Spacer(),
-      InkWell(
-        onTap: () => {},
-        child: Row(
-          children: [
-            TitlePage(
-              title: textAction,
-              color: Colors.black,
-              fontSize: 15,
-              fontWeight: FontWeight.w500,
-            ),
-            Icon(
-              Icons.play_arrow,
-              size: 15,
-            )
-          ],
-        ),
-      ),
-    ],
-  );
-}
-
 //Widget Popular Weeks
 Widget _popular(
   BuildContext context,
@@ -361,6 +332,48 @@ Widget _popular(
               )
             ],
           )
+        ],
+      ),
+    ),
+  );
+}
+
+//slider collections
+Widget _sliderCollections() {
+  return Container(
+    height: 180,
+    child: Swiper(
+      itemCount: 4,
+      layout: SwiperLayout.DEFAULT,
+      itemBuilder: (BuildContext context, int index) {
+        return ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (BuildContext context, int index) {
+              return _labelCollection(context);
+            });
+      },
+    ),
+  );
+}
+
+//label ColletionSlider
+Widget _labelCollection(BuildContext context) {
+  return InkWell(
+    onTap: () => {},
+    child: Container(
+      margin: EdgeInsets.all(10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image(
+                width: 300,
+                height: 150,
+                fit: BoxFit.cover,
+                image: NetworkImage(
+                    'https://image.freepik.com/fotos-gratis/macarrao-penne-com-almondegas-em-molho-de-tomate-em-uma-tigela-branca_2829-7663.jpg')),
+          ),
         ],
       ),
     ),

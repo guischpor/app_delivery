@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 //styles
 
-//widgets
+//commons widgets
+import 'package:app_delivery/src/features/presentation/commons_widgets/show_dialog.dart';
 
 //Tabs
 import 'package:app_delivery/src/features/presentation/tabs/explore_tab/View/explore_tab.dart';
@@ -17,6 +18,15 @@ class TabsPage extends StatefulWidget {
 }
 
 class _TabsPagetate extends State<TabsPage> {
+  //initState
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () {
+      _setLocation(context);
+    });
+  }
+
   List<Widget> _widgetOptions = [
     ExploreTab(),
     MyOrderTab(),
@@ -65,6 +75,22 @@ class _TabsPagetate extends State<TabsPage> {
           label: 'Profile',
         ),
       ],
+    );
+  }
+
+  Future _setLocation(BuildContext context) async {
+    await _alertLocation(context);
+  }
+
+  //alerta
+  _alertLocation(BuildContext context) {
+    showAlerta(
+      context,
+      AssetImage('assets/icons/icon-pin-ok.png'), //icon
+      "Enable Your Location", //title
+      "Please allow to use your location to show nearby restaurant on the map.", //subTitle
+      "Enable Location", //titleButton
+      () => {print('Enable Geolocation on App')}, //function
     );
   }
 }
