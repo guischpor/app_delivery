@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       TitlePage(
                         title: "Welcome Back",
-                        color: Theme.of(context).primaryColor,
+                        color: Colors.black,
                         fontWeight: FontWeight.bold,
                         fontSize: 30,
                       ),
@@ -103,6 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                       Container(
                         margin: EdgeInsets.only(top: 20),
                         child: BuildButton(
+                          color: orange,
                           onPressed: _routeHomePage,
                           title: "Log In",
                         ),
@@ -139,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                                 child: Text(
                                   'Sign up',
                                   style: TextStyle(
-                                    color: Theme.of(context).accentColor,
+                                    color: orange,
                                     fontWeight: FontWeight.w500,
                                   ),
                                 ),

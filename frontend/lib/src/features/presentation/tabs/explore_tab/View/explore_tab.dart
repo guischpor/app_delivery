@@ -217,7 +217,7 @@ Widget _labelSwipe(BuildContext context) {
                     child: RaisedButton(
                       elevation: 0.5,
                       shape: StadiumBorder(),
-                      color: Theme.of(context).accentColor,
+                      color: orange,
                       onPressed: () => {},
                       child: TitlePage(
                         title: "Delivery",
@@ -317,7 +317,7 @@ Widget _popular(
                         child: RaisedButton(
                           elevation: 0.5,
                           shape: StadiumBorder(),
-                          color: Theme.of(context).accentColor,
+                          color: orange,
                           onPressed: () => {},
                           child: TitlePage(
                             title: "Delivery",
@@ -368,11 +368,12 @@ Widget _labelCollection(BuildContext context) {
           ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image(
-                width: 300,
-                height: 150,
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                    'https://image.freepik.com/fotos-gratis/macarrao-penne-com-almondegas-em-molho-de-tomate-em-uma-tigela-branca_2829-7663.jpg')),
+              width: 300,
+              height: 150,
+              fit: BoxFit.cover,
+              image: NetworkImage(
+                  'https://image.freepik.com/fotos-gratis/macarrao-penne-com-almondegas-em-molho-de-tomate-em-uma-tigela-branca_2829-7663.jpg'),
+            ),
           ),
         ],
       ),

@@ -1,7 +1,8 @@
 //Widgtes
 import 'package:flutter/material.dart';
 
-//Styles
+//styles
+import 'package:app_delivery/src/colors/colors.dart';
 
 //Commons_widgets
 import 'package:app_delivery/src/features/presentation/commons_widgets/back_button.dart';
@@ -42,7 +43,7 @@ class _SignUpPageState extends State<SignUpPage> {
           children: [
             TitlePage(
               title: "Create an account",
-              color: Theme.of(context).primaryColor,
+              color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 30,
               textAlign: TextAlign.center,
@@ -100,6 +101,7 @@ class _SignUpPageState extends State<SignUpPage> {
             Container(
               margin: EdgeInsets.only(top: 40),
               child: BuildButton(
+                color: orange,
                 onPressed: () => {},
                 title: "Sign up",
               ),

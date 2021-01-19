@@ -4,11 +4,13 @@ class BuildButtonLogo extends StatelessWidget {
   final Function onPressed;
   final String title;
   final AssetImage assetImage;
+  final Color color;
 
   BuildButtonLogo({
     this.onPressed,
     this.title,
     this.assetImage,
+    this.color,
   });
 
   @override
@@ -18,7 +20,7 @@ class BuildButtonLogo extends StatelessWidget {
       height: 45,
       child: RaisedButton(
           onPressed: onPressed,
-          color: Theme.of(context).buttonColor,
+          color: color,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),

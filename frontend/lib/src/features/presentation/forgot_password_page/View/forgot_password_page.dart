@@ -1,3 +1,4 @@
+import 'package:app_delivery/src/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 //Styles
@@ -41,7 +42,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             children: [
               TitlePage(
                 title: "Forgot Password",
-                color: Theme.of(context).primaryColor,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
               ),
@@ -69,6 +70,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               Container(
                 margin: EdgeInsets.only(top: 40),
                 child: BuildButton(
+                  color: orange,
                   onPressed: () => {
                     showAlerta(
                       context,
@@ -77,7 +79,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       "You'll shortly receive an email with a code to setup a new password.", //subTitle
                       "Done", //titleButton
                       _routeLoginPage, //function
-                    ),
+                    )
                   },
                   title: "Send",
                 ),

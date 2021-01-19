@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:app_delivery/src/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 //Pages
@@ -61,6 +62,7 @@ class _WelcomePageState extends State<WelcomePage> {
               ),
               Container(
                 child: BuildButton(
+                  color: orange,
                   onPressed: _routeLoginPage,
                   title: "Log In",
                 ),
@@ -68,6 +70,7 @@ class _WelcomePageState extends State<WelcomePage> {
               Container(
                 margin: EdgeInsets.only(top: 20),
                 child: BuildButtonLogo(
+                  color: blueFacebook,
                   onPressed: () => {},
                   title: "Connect with facebook",
                   assetImage: AssetImage('./assets/icons/facebook_512px.png'),

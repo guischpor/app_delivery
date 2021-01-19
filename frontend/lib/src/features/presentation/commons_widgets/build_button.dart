@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class BuildButton extends StatelessWidget {
   final Function onPressed;
   final String title;
-  final AssetImage assetImage;
+  final Color color;
 
   BuildButton({
     this.onPressed,
     this.title,
-    this.assetImage,
+    this.color,
   });
 
   @override
@@ -18,7 +18,7 @@ class BuildButton extends StatelessWidget {
       height: 45,
       child: RaisedButton(
         onPressed: onPressed,
-        color: Theme.of(context).accentColor,
+        color: color,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
