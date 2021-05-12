@@ -81,31 +81,34 @@ Widget _topBar(BuildContext context) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      Container(
-        width: 300,
-        padding: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          border: Border.all(color: colorGreyBorder),
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          children: [
-            Icon(
-              Icons.search,
-              size: 20,
-              color: cinza,
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 5),
-              child: Text(
-                'Search',
-                style: TextStyle(
-                  color: cinza,
-                  fontSize: 17,
+      GestureDetector(
+        onTap: () => Navigator.pushNamed(context, 'search'),
+        child: Container(
+          width: 300,
+          padding: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+            border: Border.all(color: colorGreyBorder),
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            children: [
+              Icon(
+                Icons.search,
+                size: 20,
+                color: cinza,
+              ),
+              Container(
+                margin: EdgeInsets.only(left: 5),
+                child: Text(
+                  'Search',
+                  style: TextStyle(
+                    color: cinza,
+                    fontSize: 17,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       Container(

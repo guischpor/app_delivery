@@ -11,3 +11,4 @@ final orange = Color.fromRGBO(255, 140, 0, 1.0);
 //colors borders input search
 final colorGreyBorder = Color.fromRGBO(234, 236, 239, 1.0);
 final bgColorButtonFilter = Color.fromRGBO(209, 209, 214, 1.0);
+final colorInputSearch = Color.fromRGBO(142, 142, 147, 1.2);

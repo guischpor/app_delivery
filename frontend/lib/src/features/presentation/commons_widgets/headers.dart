@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 //commons widgets
 import 'package:app_delivery/src/features/presentation/commons_widgets/title_page.dart';
 
+//styles
+import 'package:app_delivery/src/colors/colors.dart';
+
 //Widgets Headers
 Widget headers(
   BuildContext context,
